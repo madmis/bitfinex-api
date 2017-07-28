@@ -20,37 +20,22 @@ class BitfinexApi
     private $client;
 
     /**
-     * @var string
-     */
-    private $publicKey;
-
-    /**
-     * @var string
-     */
-    private $secretKey;
-
-    /**
      * @var EndpointFactory
      */
     private $endpointFactory;
 
     /**
      * @param string $baseUri example: http://localhost:8080
-     * @param string $publicKey
-     * @param string $secretKey
-     * @param string $apiUrn  example: /api/v2
-     * @param array  $options extra parameters
+     * @param string $apiUrn example: /api/v2
+     * @param array $options extra parameters
      */
     public function __construct(
         string $baseUri,
-        string $publicKey,
-        string $secretKey,
         string $apiUrn = '/v2',
         array $options = []
-    ) {
-        $this->client          = new GuzzleClient($baseUri, $apiUrn, $options);
-        $this->publicKey       = $publicKey;
-        $this->secretKey       = $secretKey;
+    )
+    {
+        $this->client = new GuzzleClient($baseUri, $apiUrn, $options);
         $this->endpointFactory = new EndpointFactory();
     }
 

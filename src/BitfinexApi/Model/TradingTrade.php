@@ -2,7 +2,7 @@
 
 namespace madmis\BitfinexApi\Model;
 
-use madmis\BitfinexApi\Api;
+use madmis\BitfinexApi\Model\Traits\TradeTrait;
 
 /**
  * Class TradingTrade
@@ -10,27 +10,7 @@ use madmis\BitfinexApi\Api;
  */
 class TradingTrade
 {
-    /**
-     * @var int
-     */
-    protected $id;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    protected $mts;
-
-    /**
-     * @var float
-     */
-    protected $amount;
-
-    /**
-     * sell or buy
-     * @var string
-     */
-    protected $type = Api::BUY;
+    use TradeTrait;
 
     /**
      * Price at which the trade was executed
@@ -38,56 +18,6 @@ class TradingTrade
      */
     protected $price;
 
-    /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
-     *
-     * @return \DateTime
-     */
-    public function getMts(): \DateTime
-    {
-        return $this->mts;
-    }
-
-    /**
-     * @param int $mts
-     */
-    public function setMts(int $mts): void
-    {
-        $this->mts = (new \DateTime())->setTimestamp($mts / 1000);
-    }
-
-    /**
-     * @return float
-     */
-    public function getAmount(): float
-    {
-        return $this->amount;
-    }
-
-    /**
-     * @param float $amount
-     */
-    public function setAmount(float $amount): void
-    {
-        $this->type = $amount < 0 ? Api::SELL : Api::BUY;
-
-        $this->amount = abs($amount);
-    }
 
     /**
      * @return float
@@ -104,15 +34,6 @@ class TradingTrade
     public function setPrice(float $price): void
     {
         $this->price = $price;
-    }
-
-    /**
-     * Trade type: buy or sell
-     * @return string
-     */
-    public function getType(): string
-    {
-        return $this->type;
     }
 
     /**
@@ -135,4 +56,3 @@ class TradingTrade
         }, $items);
     }
 }
-

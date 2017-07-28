@@ -2,7 +2,7 @@
 
 namespace madmis\BitfinexApi\Model;
 
-use madmis\BitfinexApi\Api;
+use madmis\BitfinexApi\Model\Traits\TradeTrait;
 
 /**
  * Class FundingTrade
@@ -10,21 +10,7 @@ use madmis\BitfinexApi\Api;
  */
 class FundingTrade
 {
-    /**
-     * @var int
-     */
-    protected $id;
-
-    /**
-     * Date
-     * @var \DateTime
-     */
-    protected $mts;
-
-    /**
-     * @var float
-     */
-    protected $amount;
+    use TradeTrait;
 
     /**
      * Rate at which funding transaction occurred
@@ -37,63 +23,6 @@ class FundingTrade
      * @var int
      */
     protected $period;
-
-    /**
-     * sell or buy
-     * @var string
-     */
-    protected $type = Api::BUY;
-
-    /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
-     *
-     * @return \DateTime
-     */
-    public function getMts(): \DateTime
-    {
-        return $this->mts;
-    }
-
-    /**
-     * @param int $mts
-     */
-    public function setMts(int $mts): void
-    {
-        $this->mts = (new \DateTime())->setTimestamp($mts / 1000);
-    }
-
-    /**
-     * @return float
-     */
-    public function getAmount(): float
-    {
-        return $this->amount;
-    }
-
-    /**
-     * @param float $amount
-     */
-    public function setAmount(float $amount): void
-    {
-        $this->type = $amount < 0 ? Api::SELL : Api::BUY;
-
-        $this->amount = abs($amount);
-    }
 
     /**
      * Rate at which funding transaction occurred
@@ -127,15 +56,6 @@ class FundingTrade
     public function setPeriod(int $period): void
     {
         $this->period = $period;
-    }
-
-    /**
-     * Trade type: buy or sell
-     * @return string
-     */
-    public function getType(): string
-    {
-        return $this->type;
     }
 
     /**
