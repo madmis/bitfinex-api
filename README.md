@@ -1,5 +1,7 @@
 # Bitfinex REST API PHP Client
 
+[![SensioLabsInsight][sensiolabs-insight-image]][sensiolabs-insight-link]
+
 [Bitfinex](https://www.bitfinex.com/) provides REST APIs that you can use
  to interact with platform programmatically.
 
@@ -47,8 +49,8 @@ Easiest way to do this is through composer.
 [testing-link]: https://travis-ci.org/madmis/bitfinex-api
 [testing-image]: https://travis-ci.org/madmis/bitfinex-api.svg?branch=master
 
-[sensiolabs-insight-link]: https://insight.sensiolabs.com/projects/77152883-412e-4a91-86b6-fb976243a020
-[sensiolabs-insight-image]: https://insight.sensiolabs.com/projects/77152883-412e-4a91-86b6-fb976243a020/mini.png
+[sensiolabs-insight-link]: https://insight.sensiolabs.com/projects/31b857a5-4329-41da-b88c-e50f5b424452
+[sensiolabs-insight-image]: https://insight.sensiolabs.com/projects/31b857a5-4329-41da-b88c-e50f5b424452/mini.png
 
 [package-link]: https://packagist.org/packages/madmis/bitfinex-api
 [downloads-image]: https://poser.pugx.org/madmis/bitfinex-api/downloads
