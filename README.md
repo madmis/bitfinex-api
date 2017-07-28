@@ -1,6 +1,10 @@
 # Bitfinex REST API PHP Client
 
 [![SensioLabsInsight][sensiolabs-insight-image]][sensiolabs-insight-link]
+[![Latest Stable Version][stable-image]][package-link]
+[![Total Downloads][downloads-image]][package-link]
+[![License][license-image]][license-link]
+
 
 [Bitfinex](https://www.bitfinex.com/) provides REST APIs that you can use
  to interact with platform programmatically.
